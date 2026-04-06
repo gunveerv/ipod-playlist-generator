@@ -1,5 +1,5 @@
 # ipod-playlist-generator
-a simple gui to manage ipod classic playlists, built with react
+a simple gui to manage ipod classic playlists, built with cpp
 
 ## engine
 * select a folder
@@ -8,3 +8,6 @@ a simple gui to manage ipod classic playlists, built with react
 
 ## engine future updates
 * be able to select music and playlist folders
+
+## commands
+* `make && ./mp3.out ../ipod-files`

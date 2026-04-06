@@ -23,8 +23,28 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    for (const auto & entry : fs::directory_iterator(playerPath))
-        std::cout << entry.path() << std::endl;
+    //Check for empty folders
+    if (fs::is_empty(playerPath))
+    {
+        std::string msg = "Error Path '" + playerPath + "' is empty";
+        error(msg);
+    }
+
+    if (!fs::exists(playerPath + "/Music") || fs::is_empty(playerPath + "/Music"))
+    {
+        std::string msg = "Error Path " + playerPath + "/Music is empty";
+        error(msg);
+    }
+
+    if (!fs::exists(playerPath + "/Playlists") || fs::is_empty(playerPath + "/Playlists"))
+    {
+        std::string msg = "Error Path " + playerPath + "/Playlists is empty";
+        error(msg);
+    }
+
+    // loops through entire dir
+    // for (const auto & entry : fs::directory_iterator(playerPath))
+    //     std::cout << entry.path() << std::endl;
 
     return 0;
 }
